@@ -1,14 +1,6 @@
 #  Telephone System Simulation (Lost & Delay Call Handling)
 
-A Java-based **Discrete Event Simulation (DES)** system that simulates the working of a telephone network. It helps analyze how incoming calls are handled under two models: **Lost Call System** and **Delay Call System**.
-
-###  Objective
-
-To simulate a telephone system that models the behavior of a telephone network where calls are connected through links, and to track key performance metrics under different call-handling conditions.
-
-###  Theory
-
-This project simulates a telephone network where telephones are interconnected via limited links. It uses the principles of **Discrete Event Simulation (DES)** to model call arrivals, connections, rejections, and completions.
+A Java-based **Discrete Event Simulation (DES)** system that simulates the working of a telephone network. It helps analyze how incoming calls are handled under two models: **Lost Call System** and **Delay Call System**
 
 ### Key Performance Metrics
 
