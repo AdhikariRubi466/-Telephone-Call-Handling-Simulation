@@ -1,78 +1,32 @@
-# Telephone-Call-Handling-Simulation
-# Project Structure
+#  Telephone System Simulation (Lost & Delay Call Handling)
 
-### 1. Welcome.java — Main Entry Point  
-**Purpose:** Launch screen with a telephone-themed interface.
+A Java-based **Discrete Event Simulation (DES)** system that simulates the working of a telephone network. It helps analyze how incoming calls are handled under two models: **Lost Call System** and **Delay Call System**.
 
-**Features:**  
-- Two navigation buttons:  
-  ➤ LostCallSystem  
-  ➤ DelayCallSystem  
-  
-### 2. LostCallSystem.java — Lost Call Simulation  
-**Objective:** Models scenarios where calls may be dropped due to system limitations.
+###  Objective
 
-**Components:**  
-- **Call Queue Table:** Displays call info (From, To, Duration, Arrival Time)  
-- **Line Status Table:** Indicates the state of 8 telephone lines (Busy / Free)  
-- **Active Calls Table:** Shows up to 3 ongoing calls  
-- **Call Counters:** Tracks Processed, Completed, Blocked, Busy calls  
-- **Link Utilization Panel:** Max Links vs Used Links  
-- **System Clock:** Real-time ticking clock  
+To simulate a telephone system that models the behavior of a telephone network where calls are connected through links, and to track key performance metrics under different call-handling conditions.
 
-### 3. DelayCallSystem.java — Delayed Call Simulation  
-**Objective:** Simulates delayed call handling with enhanced queue management.
+###  Theory
 
-**Additional Features:**  
-- Same tables and indicators as in LostCallSystem  
-- Extra support for delayed call queuing  
-- Implements custom call processing algorithms  
+This project simulates a telephone network where telephones are interconnected via limited links. It uses the principles of **Discrete Event Simulation (DES)** to model call arrivals, connections, rejections, and completions.
 
-##  Shared Functionalities  
+### Key Performance Metrics
 
-###  Menu Bar (Available in All Windows)  
-- **About Us:** HTML-formatted version info + developer credits  
-- **Help:** User guide with instructions and troubleshooting  
+|  Metric              |  Description                                                                 |
+|------------------------|--------------------------------------------------------------------------------|
+| Total Processed Calls  | Total number of attempted calls (valid or invalid)                            |
+| Completed Calls        | Number of successfully connected and completed calls                          |
+| Blocked Calls          | Calls rejected instantly due to unavailable links                             |
+| Busy Calls             | Calls rejected due to all destination lines being busy                        |
+| Delayed Calls          | Calls queued because lines or links were unavailable                          |
+| Lost Calls             | Calls dropped from queue due to timeout or overflow                           |
+| Avg. Waiting Time      | Time spent in queue before call gets connected                                |
 
-##  Simulation Mechanics  
+### Project Structure
 
-###  Call Generation  
-- Randomly generated calls with varying lengths and arrival times  
-- Queue auto-refill system for continuous simulation  
-- Arrival patterns managed with a time-based scheduler  
-
-###  UI Feedback  
-- Color-coded Tables: For call and line status  
-- Real-Time Clock: Continuously updated simulation time  
-- Auto Refresh: Tables and indicators update dynamically  
-
-##  Technical Details  
-
-###  Core Technologies  
-- **Java Swing:**  
-  - JFrame — Main windows  
-  - JTable — Data displays  
-  - JMenuBar — Menus  
-  - JOptionPane — Dialog messages  
-
-- **Simulation Engine:**  
-  - Timer-based call events  
-  - Priority queues for efficient call management  
-  - Stateful tracking of line and call usage  
-
-###  Window & Lifecycle Management  
-- Uses `DISPOSE_ON_CLOSE` to close child windows without terminating the main app  
-- Maintains parent-child relationships between Welcome screen and simulations  
-
-##  How to Run the Project  
-1. Launch the simulation by executing `Welcome.java`.  
-2. Choose your mode: Lost Call or Delay Call.  
-3. Observe real-time call handling simulation.  
-4. Use menu options for help and contact info.  
-
-##  Learning Highlights  
-This project demonstrates:  
-- Real-world simulation principles  
-- Event-driven programming  
-- State management  
-- GUI design using Java Swing 
+```bash
+SimulationOfTelephoneSystem/
+├── SimulationOfTelephoneSystem.java  # Main entry point
+├── Home.java                         # Main menu navigation
+├── LostCall.java                     # Immediate rejection if no link or busy line
+└── DelayCall.java                    # Queuing model for delayed calls
